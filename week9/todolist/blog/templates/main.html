@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Schedules</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/main.css' %}">
+</head>
+<body>
+    {% for post in posts %}
+        <a href="{% url 'detail' post.pk %}">{{post.title}}</a> 
+    {% endfor %}
+    <a href="{% url 'new' %}"> 
+        <img src="{% static '../static/image/add.png'%}" alt="add button">
+    </a>
+    <a href="{% url 'index' %}">
+        <img src="{% static '../static/image/home.png'%}" alt="">
+    </a>
+</body>
+</html>

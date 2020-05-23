@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedules</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/detail.css' %}">
+</head>
+<body>
+    <div>
+        <p>제목</p>
+        <span>{{post.title}}</span>
+    </div>
+    <div>
+        <p>상세내용</p>
+        <span>{{post.content}}</span>
+    </div>
+    <div>
+        <p>날짜</p>
+        <span>{{ post.pubdate }}</span>
+    </div>
+    <a href="{% url 'main'%}">
+        <img src="{% static '../static/image/back.png'%}">
+    </a>
+    <a href="{% url 'edit' post.pk %}">
+        <img src="{% static '../static/image/edit.png'%}">
+    </a>
+</body>
+</html>

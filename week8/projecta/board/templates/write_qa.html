@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A 글쓰기 | NEXT x LIKELION</title>
+    <link rel="icon" href="../static/image/favicon_package_v0.16/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'write.css'%}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo roboto">
+            <a href="{% url 'index'%}">
+                <img src="{% static '../static/image/lion.png' %}" alt="logo">
+                <p class="title">NEXT <span>X</span> LIKE<span>LION</span></p> 
+            </a>   
+        </div>
+        <div class="nav notosans">
+            <a href="{% url 'general'%}">자유게시판</a>
+            <a href="{% url 'notice'%}">공지방</a>
+            <a href="{% url 'qa'%}">Q&A</a> 
+        </div>
+    </div>
+    <div class="main-title notosans">
+        <div>글쓰기&nbsp;ㅣ<span>&nbsp;Q&A</span></div>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="notosans">제목</div>
+        <input class="post_title" name="title" placeholder="제목을 입력해주세요">
+        <div class="notosans">내용</div>
+        <input class="post_content" name="content" placeholder="내용을 입력해주세요">
+        <button type="submit">포스팅</button>
+    </form>
+</body>
+</html>

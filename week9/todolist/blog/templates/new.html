@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Schedule</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/new.css' %}">
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <input name="title" placeholder="제목">
+        <input name="content" placeholder="세부내용">
+        <input type="date" value>
+        <button type="submit">추가하기</button>
+    </form>
+    <a href="{% url 'main'%}">
+        <img src="{% static '../static/image/back.png'%}">
+    </a>
+</body>
+</html>

@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*------------top-container---------------*/
+.top-container-photo {
+    background-color: black;
+    height: 28.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-nav-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 3px;
+}
+
+.logo {
+    width: 7%;
+}
+
+/*------------head-container---------------*/
+.head-container-photo {
+    background-color: black;
+}
+
+.header-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4;
+    padding: 60px 0 100px;
+}
+
+.main-title-photo {
+    font-size: 3em;
+    color: white;
+    text-decoration-line: underline;
+    text-decoration-color: #ffb6b6;
+}
+
+.sub-title-photo {
+    font-size: 1.3em;
+    color: white;
+}
+
+/*------------main-container---------------*/
+.main-container-photo {
+    background-color: black;
+    padding: 20px 0 100px;
+}
+
+.first-line-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-line-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.third-line-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.padding {
+    padding: 15px 15px;
+}
+
+.size {
+    height: 300px;
+}
+
+/*------------footer-ad---------------*/
+.footer {
+    background-color: black;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    color: white;
+    padding: 50px 0;
+    font-size: 1.4em;
+}

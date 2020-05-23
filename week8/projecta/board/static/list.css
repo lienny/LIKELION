@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*font setting*/
+.notosans {font-family: 'Noto Sans KR', sans-serif;}
+.roboto {font-family: 'Roboto', sans-serif;}
+
+body {
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 70px;
+    color: white;
+}
+
+.logo {
+    width: 30%;
+}
+
+.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    transition: color .5s;
+}
+
+.logo a:hover {
+    color: #ffad09;
+}
+
+.logo span {
+    color: #ffad09;
+}
+
+.logo img {
+    width: 60px;
+    margin-right: 20px;
+}
+
+.title {
+    font-weight: 300;
+}
+
+.nav {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    transition: color .5s;
+}
+
+.nav a:hover {
+    color: #ffad09;
+}
+
+.main-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main-title div{
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 300;
+    border-bottom: 3px solid #ffad09;
+    width: 65%;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.number {
+    font-size: 0.8rem;
+}
+
+.main-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 66.3%;
+}
+
+.content a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    padding: 15px 10px;
+}
+
+.button_new {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.button_new a{
+    width: 50px;
+    padding: 5px 10px;
+    border: 2px solid #ffad09;
+    background-color: #ffad09;
+    border-radius: 30px;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
