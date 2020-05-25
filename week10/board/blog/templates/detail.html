@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'base.html'%}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '../static/detail.css'%}">
+    {% endblock css %}
+</head>
+<body>
+    {% block content%}
+    <div class="main roboto">
+        <div>
+            <div>
+                <p>Title</p>
+                {{article_detail.title}}
+            </div>
+            <div>
+                <p>Detail</p>
+                {{article_detail.content}}
+            </div>
+            <div>
+                <p>Due Date</p>
+                {{article_detail.due}}
+            </div>
+        </div>
+        <div class="deb">
+            <a href="{% url 'delete' article_detail.pk %}">Delete</a>
+            <a href="{% url 'edit' article_detail.pk %}">Edit</a>
+            <a href="{% url 'index'%}">Back</a>
+        </div>
+        <div class="line">
+        </div>
+        <div class="comment">
+            {% for comment in article_detail.comments.all %}
+            <div>
+                {{comment.content}}
+            </div>
+            <a href="{% url 'delete_comment' article_detail.pk comment.pk %}">X</a>
+        {% endfor %}
+        </div>
+        <div class="create_comment">
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name='content' placeholder="Any comments">
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

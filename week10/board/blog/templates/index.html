@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends 'base.html' %}
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To.Do.List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '../static/index.css'%}">
+    {% endblock css %}
 </head>
 <body>
-    {{article}}
+    {% block content %}
+    {% for article in articles%}
+    <div class="main roboto">
+        <a href="{% url 'detail' article.pk %}">
+            <span>{{article.title}}</span>
+            <span>{{article.due}}</span>
+        </a>
+        <div class="function">
+            <a href="{% url 'edit' article.pk %}">Edit</a>
+            <a href="{% url 'delete' article.pk %}">Delete</a>
+        </div>
+    </div>
+    {% endfor %}
+    <a class='add roboto' href="{% url 'new' %}">Add</a>
+    {% endblock content %}
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '../static/base.css'%}">
+    {% endblock css %}
+    <title>To.Do.List</title>
+</head>
+<body>
+    <div class="header poppins">
+        <h1>To. Do. List</h1>
+        <p>by GW</p>
+    </div>
+    <div class="category">
+    </div>
+    {% block content %}
+    {% endblock content%}
+</body>
+</html>

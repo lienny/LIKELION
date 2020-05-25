@@ -20,5 +20,10 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index,name='index')
+    path('',views.index,name='index'),
+    path('new/', views.new, name='new'),
+    path('detail/<int:pk_select>', views.detail, name='detail'),
+    path('delete/<int:pk_select>',views.delete, name='delete'),
+    path('edit/<int:pk_select>',views.edit, name='edit'),
+    path('delete_comment/<int:pk_select>/<int:pk_select_comment>',views.delete_comment, name='delete_comment')
 ]
