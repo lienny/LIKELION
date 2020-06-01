@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     {% load static %}
+    {% load socialaccount %}
+    {% providers_media_js %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -14,6 +16,17 @@
     <div class="header poppins">
         <h1>To. Do. List</h1>
         <p>by GW</p>
+    </div>
+    <div class="nav-bar">
+        <a class="nav-item" href="{% url 'index' %}">HOME</a>
+        {% if user.is_authenticated %}
+        <div class="nav-item">안녕하세요, {{ user.username }}님</div>
+        <a class="nav-item" href="{% url 'logout' %}">로그아웃</a>
+        {% else %}
+        <a class="nav-item" href="{% url 'login' %}">로그인</a>
+        <a class="nav-item" href="{% provider_login_url 'kakao'%}">카카오 로그인</a>
+        <a class="nav-item" href="{% url 'signup' %}">회원가입</a>
+        {% endif %}
     </div>
     <div class="category">
     </div>

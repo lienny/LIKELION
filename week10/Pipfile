@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 django = "*"
 datetime = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.8"

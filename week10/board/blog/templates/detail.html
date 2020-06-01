@@ -29,8 +29,10 @@
             </div>
         </div>
         <div class="deb">
+            {% if user.is_authenticated and post.author.pk == user.pk %}
             <a href="{% url 'delete' article_detail.pk %}">Delete</a>
             <a href="{% url 'edit' article_detail.pk %}">Edit</a>
+            {% endif %}
             <a href="{% url 'index'%}">Back</a>
         </div>
         <div class="line">
@@ -40,15 +42,19 @@
             <div>
                 {{comment.content}}
             </div>
+            {% if user.is_authenticated and post.author.pk == user.pk %}
             <a href="{% url 'delete_comment' article_detail.pk comment.pk %}">X</a>
+            {% endif %}
         {% endfor %}
         </div>
         <div class="create_comment">
+            {% if user.is_authenticated %}
             <form method="POST">
                 {% csrf_token %}
                 <input type="text" name='content' placeholder="Any comments">
                 <button type="submit">Post</button>
             </form>
+            {% endif %}
         </div>
     </div>
     {% endblock content %}
