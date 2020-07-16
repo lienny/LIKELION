@@ -18,6 +18,7 @@
         <a href="{% url 'detail' article.pk %}">
             <span>{{article.title}}</span>
             <span>{{article.due}}</span>
+            <img src="{{post.img}}" alt="{{post.title}}사진">
         </a>
         <div class="function">
             <a href="{% url 'edit' article.pk %}">Edit</a>

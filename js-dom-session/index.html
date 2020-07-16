@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <script>
+    const getRandomColor = function() {
+    const hexa = '0123456789abcdef'
+    
+    let colors = ['#']
+    for (i=0; i<6; i++) {
+        const randNum = Math.floor(Math.random()*16)
+        colors.push(hexa[randNum])
+        } 
+        return colors
+    }
+
+    const changeColor = function() {
+        document.querySelector('body').style.background = getRandomColor().toString().split(',').join("")
+    }
+    setInterval(changeColor, 100) 
+
+
+    const clockContent = document.getElementById('time')
+
+    const getTime = function() {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        clockContent.innerText = `${hours<10 ? `0${hours}` : `${hours}`}:${minutes<10 ? `0${minutes}`: `${minutes}`}:${seconds <10 ? `0${seconds}`: `${seconds}`}`
+    }
+
+    const initTime = function () {
+        getTime();
+        setInterval(getTime, 1000);
+    };
+
+    initTime()
+    </script>
+</body>
+</html>

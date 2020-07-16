@@ -28,6 +28,10 @@
                 <p>Due Date</p>
                 <input type="date" name="due" value="{{article.due}}">    
             </div>
+            <div>
+                <p>Image (optional)</p>
+                <input type="file" name="img">
+            </div>
             <div class="button">
                 <button type="submit">Save</button> 
                 <a href="{% url 'index'%}">Back</a>
