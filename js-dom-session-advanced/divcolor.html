@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Div</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        div {
+            padding: 30px;
+            border: 1px solid #999999;
+            background-color: white;
+        }
+
+        div.childSelected {
+            background-color: yellow;
+        }
+
+        div.parentSelected {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const divs = document.querySelectorAll('div')
+
+    const alterColor = (event) => {
+    divs.forEach(div => {
+    div.classList.remove("childSelected","parentSelected")
+    });
+    let selectedDiv = event.target
+    let parentDiv = selectedDiv.parentNode
+
+    selectedDiv.classList.add("childSelected")
+    parentDiv.classList.add("parentSelected")
+
+    }
+
+    const init = () => {
+    divs.forEach((div) => {
+    div.addEventListener("click", alterColor)
+    });
+    console.log("work")
+    }
+
+    init();
+</script>
+</html>
